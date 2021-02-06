@@ -1,14 +1,16 @@
 import React from 'react';
+
 import Auxiliary from '../../hoc/Auxiliary';
+import Staking from '../../containers/Staking';
 import Toolbar from '../Toolbar/Toolbar';
 
-const layout = (props) => (
+const Layout = (props) => (
     <Auxiliary>
-        <Toolbar></Toolbar>
-        <main>
-            {props.children}
+        <Toolbar />
+        <main className="container w-50 mt-4">
+            <Staking />
         </main>
     </Auxiliary>
 );
 
-export default layout;
+export default Layout;

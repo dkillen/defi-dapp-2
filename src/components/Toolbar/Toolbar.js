@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import WalletContext from '../../context/wallet-context';
 
 import farmer from '../../assets/farmer.png';
 
-const toolbar = () => (
-    <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-            <div className="navbar-brand">
-                <img src={farmer} alt="Farmer" /> My Token Farm
-            </div>
-            <span>Address: 0x0</span>
-        </div>
-    </nav>    
-);
+const Toolbar = () => {
+    const walletContext = useContext(WalletContext);
 
-export default toolbar;
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <div className="container-fluid">
+                <div className="navbar-brand">
+                    <img src={farmer} alt="Farmer" /> My Token Farm
+                </div>
+                <span>Address: {walletContext.address}</span>
+            </div>
+        </nav>
+    );
+};
+
+export default Toolbar;
